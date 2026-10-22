@@ -1,0 +1,9 @@
+{
+  "name": "gila-river-farms-website",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Gila River Farms public website (static pages + Vercel functions)",
+  "engines": {
+    "node": ">=18"
+  }
+}

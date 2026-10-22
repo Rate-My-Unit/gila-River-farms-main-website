@@ -1,0 +1,20 @@
+{
+  "name": "Gila River Farms",
+  "short_name": "GR Farms",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#1E3932",
+  "background_color": "#F2F0EB",
+  "display": "browser",
+  "start_url": "/"
+}

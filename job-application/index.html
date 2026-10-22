@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Employment Application | Gila River Farms</title>
+<meta name="description" content="Apply for a job at Gila River Farms. Preference is given to Gila River Indian Community members.">
+<meta property="og:title" content="Employment Application | Gila River Farms">
+<meta property="og:description" content="Apply for a job at Gila River Farms. Preference is given to Gila River Indian Community members.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Gila River Farms">
+<meta name="theme-color" content="#1E3932">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header>
+  <div class="topbar"><div class="wrap"><p>Call the farm <a class="num" href="tel:+15203153965">(520) 315-3965</a></p><span class="hours">Hay pickup Monday–Saturday, 7am–4pm</span></div></div>
+  <div class="wrap bar">
+    <a class="brand" href="/"><img src="/assets/img-f40cd8a7e7.webp" alt="Gila River Farms logo" width="46" height="46"><span><b>Gila River Farms</b><small>Sacaton, Arizona</small></span></a>
+    <a class="cart-btn" href="/cart/" aria-label="Cart"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.4" fill="currentColor"/><circle cx="17" cy="20" r="1.4" fill="currentColor"/></svg><span class="cart-count" id="cartCount" hidden>0</span></a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" aria-label="Main">
+      <ul class="top">
+        <li><a href="/">Home</a></li>
+        <li class="has-sub" data-group="about"><button class="parent" type="button" aria-expanded="false">About</button>
+          <ul class="sub">
+            <li><a href="/our-mission/">Our Mission</a></li>
+            <li><a href="/our-team/">Our Team</a></li>
+            <li><a href="/our-history/">Our History</a></li>
+            <li><a href="/donate/">Request a Donation</a></li>
+          </ul>
+        </li>
+        <li class="has-sub active" data-group="employment"><button class="parent" type="button" aria-expanded="false">Employment Opportunities</button>
+          <ul class="sub">
+            <li><a href="/available-jobs/">Available Jobs</a></li>
+            <li><a href="/job-application/" aria-current="page">Employment Application</a></li>
+          </ul>
+        </li>
+        <li class="has-sub" data-group="products"><button class="parent" type="button" aria-expanded="false">Our Products</button>
+          <ul class="sub">
+            <li><a href="/hay/">Hay</a></li>
+            <li class="l3"><a href="/horse-hay/">Horse Hay</a></li>
+            <li class="l3"><a href="/cow-hay/">Cow Hay</a></li>
+            <li><a href="/olive-oil/">Olive Oil <span class="oos soon">Coming soon</span></a></li>
+            <li><a href="/what-we-grow/">What We Grow</a></li>
+          </ul>
+        </li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/account/" class="acct">My Account</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page wrap" id="p-apply">
+    <div class="phead">
+      <span class="crumb">Employment Opportunities</span>
+      <h1>Employment Application</h1>
+    </div>
+    <div class="eeo">
+      <p>Gila River Farms does not discriminate on any basis prohibited by federal or tribal law, and provides a preference in employment to Gila River Indian Community members, other American Indians, Alaska Natives and veterans of American Armed Forces. Gila River Farms complies with Title 12 of the Gila River Indian Community Code regarding Community member preference. It is the policy of Gila River Farms to employ qualified persons with the greatest ability, without discrimination against any employee or applicant for employment because of race, religion, color, creed, sex, disability or national origin, ancestry, age, sexual orientation, status as a disabled veteran or veteran of the Vietnam Era, or any other protected group status.</p>
+    </div>
+    <div class="sec app-wrap">
+      <form id="appForm" novalidate>
+        <div class="app-progress"><div class="bar"><i id="appBar"></i></div><span id="appCount">Step 1 of 6</span></div>
+        <p class="req-note"><span class="star" aria-hidden="true">*</span> Indicates required question</p>
+
+        <section class="step" data-title="Applicant Information">
+          <h2>Applicant Information</h2>
+          <div class="row"><div class="field"><label for="aEmail">Email<span class="star" aria-hidden="true">*</span></label><input id="aEmail" type="email" autocomplete="email" required></div><div class="field"><label for="aPos">Position Applying For<span class="star" aria-hidden="true">*</span></label><input id="aPos" type="text" required></div></div>
+          <div class="field"><span class="q">Status<span class="star" aria-hidden="true">*</span></span><div class="opts"><label class="opt"><input type="checkbox" id="aFull" required> Full-Time</label></div></div>
+          <div class="row"><div class="field"><label for="aFirst">First Name<span class="star" aria-hidden="true">*</span></label><input id="aFirst" type="text" autocomplete="given-name" required></div><div class="field"><label for="aLast">Last Name</label><input id="aLast" type="text" autocomplete="family-name"></div></div>
+          <div class="field"><label for="aAddr">Address<span class="star" aria-hidden="true">*</span></label><input id="aAddr" type="text" autocomplete="street-address" required></div>
+          <div class="row"><div class="field"><label for="aHome">Home Phone<span class="star" aria-hidden="true">*</span></label><input id="aHome" type="tel" autocomplete="tel" required></div><div class="field"><label for="aCell">Cell Phone</label><input id="aCell" type="tel"></div></div>
+          <div class="field" role="radiogroup" aria-label="Have you been previously employed by Gila River Farms?"><span class="q">Have you been previously employed by Gila River Farms?<span class="star" aria-hidden="true">*</span></span><div class="opts"><label class="opt"><input type="radio" name="aPrev" id="aPrevY" value="Yes" required> Yes</label><label class="opt"><input type="radio" name="aPrev" id="aPrevN" value="No"> No</label></div></div>
+          <div class="field"><label for="aPrevWhat">If Yes What Position / What Year</label><input id="aPrevWhat" type="text"></div>
+          <div class="field" role="radiogroup" aria-label="If hired, would you be able to provide U.S. citizenship or proof of legal right to work in the United States?"><span class="q">If hired, would you be able to provide U.S. citizenship or proof of legal right to work in the United States?</span><div class="opts"><label class="opt"><input type="radio" name="aLegal" id="aLegalY" value="Yes"> Yes</label><label class="opt"><input type="radio" name="aLegal" id="aLegalN" value="No"> No</label></div></div>
+          <div class="field"><label for="aRelated">Are you related to anyone employed at Gila River Farms? If so, please list name(s) and division(s):<span class="star" aria-hidden="true">*</span></label><input id="aRelated" type="text" required><span class="help">Write “None” if this doesn’t apply.</span></div>
+        </section>
+
+        <section class="step" data-title="Employment History" hidden>
+          <h2>Employment History</h2>
+          <p class="muted">List your three most recent employers, starting with the most recent.</p>
+          <div class="emp"><h3>1. Employer</h3>
+        <div class="field"><label for="e1Name">Employer’s Name/Address</label><input id="e1Name" type="text"></div>
+        <div class="row"><div class="field"><label for="e1Type">Type of Business</label><input id="e1Type" type="text"></div><div class="field"><label for="e1Tel">Telephone</label><input id="e1Tel" type="tel"></div></div>
+        <div class="row"><div class="field"><label for="e1Title">Job Title</label><input id="e1Title" type="text"></div><div class="field"><label for="e1Sup">Supervisor’s Name</label><input id="e1Sup" type="text"></div></div>
+        <div class="field"><label for="e1Leave">Reason for Leaving</label><input id="e1Leave" type="text"></div>
+        <div class="field"><label for="e1Duties">Description of Duties – Please be specific</label><textarea id="e1Duties" rows="3"></textarea></div>
+        <div class="row"><div class="field"><label for="e1From">Employed From</label><input id="e1From" type="date"></div><div class="field"><label for="e1To">Employed To</label><input id="e1To" type="date"></div></div>
+        <div class="row"><div class="field"><label for="e1Start">Starting Salary</label><input id="e1Start" type="text"></div><div class="field"><label for="e1End">Ending Salary</label><input id="e1End" type="text"></div></div>
+      </div>
+          <div class="emp"><h3>2. Employer</h3>
+        <div class="field"><label for="e2Name">Employer’s Name/Address</label><input id="e2Name" type="text"></div>
+        <div class="row"><div class="field"><label for="e2Type">Type of Business</label><input id="e2Type" type="text"></div><div class="field"><label for="e2Tel">Telephone</label><input id="e2Tel" type="tel"></div></div>
+        <div class="row"><div class="field"><label for="e2Title">Job Title</label><input id="e2Title" type="text"></div><div class="field"><label for="e2Sup">Supervisor’s Name</label><input id="e2Sup" type="text"></div></div>
+        <div class="field"><label for="e2Leave">Reason for Leaving</label><input id="e2Leave" type="text"></div>
+        <div class="field"><label for="e2Duties">Description of Duties – Please be specific</label><textarea id="e2Duties" rows="3"></textarea></div>
+        <div class="row"><div class="field"><label for="e2From">Employed From</label><input id="e2From" type="date"></div><div class="field"><label for="e2To">Employed To</label><input id="e2To" type="date"></div></div>
+        <div class="row"><div class="field"><label for="e2Start">Starting Salary</label><input id="e2Start" type="text"></div><div class="field"><label for="e2End">Ending Salary</label><input id="e2End" type="text"></div></div>
+      </div>
+          <div class="emp"><h3>3. Employer</h3>
+        <div class="field"><label for="e3Name">Employer’s Name/Address</label><input id="e3Name" type="text"></div>
+        <div class="row"><div class="field"><label for="e3Type">Type of Business</label><input id="e3Type" type="text"></div><div class="field"><label for="e3Tel">Telephone</label><input id="e3Tel" type="tel"></div></div>
+        <div class="row"><div class="field"><label for="e3Title">Job Title</label><input id="e3Title" type="text"></div><div class="field"><label for="e3Sup">Supervisor’s Name</label><input id="e3Sup" type="text"></div></div>
+        <div class="field"><label for="e3Leave">Reason for Leaving</label><input id="e3Leave" type="text"></div>
+        <div class="field"><label for="e3Duties">Description of Duties – Please be specific</label><textarea id="e3Duties" rows="3"></textarea></div>
+        <div class="row"><div class="field"><label for="e3From">Employed From</label><input id="e3From" type="date"></div><div class="field"><label for="e3To">Employed To</label><input id="e3To" type="date"></div></div>
+        <div class="row"><div class="field"><label for="e3Start">Starting Salary</label><input id="e3Start" type="text"></div><div class="field"><label for="e3End">Ending Salary</label><input id="e3End" type="text"></div></div>
+      </div>
+        </section>
+
+        <section class="step" data-title="Education and Training" hidden>
+          <h2>Education and Training</h2>
+          <div class="field" role="radiogroup" aria-label="Did you graduate from High School?"><span class="q">Did you graduate from High School?<span class="star" aria-hidden="true">*</span></span><div class="opts"><label class="opt"><input type="radio" name="aHS" id="aHSY" value="Yes" required> Yes</label><label class="opt"><input type="radio" name="aHS" id="aHSN" value="No"> No</label></div></div>
+          <div class="field" role="radiogroup" aria-label="If no, do you have a GED Certificate?"><span class="q">If no, do you have a GED Certificate?</span><div class="opts"><label class="opt"><input type="radio" name="aGED" id="aGEDY" value="Yes"> Yes</label><label class="opt"><input type="radio" name="aGED" id="aGEDN" value="No"> No</label></div></div>
+          <div class="field"><label for="aCollege">College/University Name-City, State / Degree Earned</label><input id="aCollege" type="text"></div>
+          <div class="field"><label for="aTrade">Trade / Business Name-City, State / Degree Earned</label><input id="aTrade" type="text"></div>
+          <div class="field"><label for="aOtherEd">Other Name-City, State / Degree Earned</label><input id="aOtherEd" type="text"></div>
+          <div class="field" role="radiogroup" aria-label="Do you have a valid Arizona Driver License?"><span class="q">Do you have a valid Arizona Driver License?<span class="star" aria-hidden="true">*</span></span><div class="opts"><label class="opt"><input type="radio" name="aAZDL" id="aAZDLY" value="Yes" required> Yes</label><label class="opt"><input type="radio" name="aAZDL" id="aAZDLN" value="No"> No</label></div></div>
+          <div class="field"><span class="q">Check the Class identified on your license</span><div class="opts wrap-opts">
+            <label class="opt"><input type="checkbox" id="lcCDL"> CDL</label><label class="opt"><input type="checkbox" id="lcA"> Class A</label><label class="opt"><input type="checkbox" id="lcB"> Class B</label><label class="opt"><input type="checkbox" id="lcC"> Class C</label><label class="opt"><input type="checkbox" id="lcD"> Class D</label>
+          </div></div>
+        </section>
+
+        <section class="step" data-title="Criminal History" hidden>
+          <h2>Criminal History</h2>
+          <div class="field" role="radiogroup" aria-label="Other than minor traffic violations, do you have any criminal convictions?"><span class="q">Other than minor traffic violations, do you have any criminal convictions?<span class="star" aria-hidden="true">*</span></span><div class="opts"><label class="opt"><input type="radio" name="aConv" id="aConvY" value="Yes" required> Yes</label><label class="opt"><input type="radio" name="aConv" id="aConvN" value="No"> No</label></div></div>
+          <div class="field"><label for="aConvExp">If yes, please explain and give name of court, disposition and dates:</label><textarea id="aConvExp" rows="3"></textarea></div>
+        </section>
+
+        <section class="step" data-title="References" hidden>
+          <h2>References</h2>
+          <div class="field"><label for="aRef1">1) Name, Address, Phone</label><input id="aRef1" type="text"></div>
+          <div class="field"><label for="aRef2">2) Name, Address, Phone</label><input id="aRef2" type="text"></div>
+          <div class="field"><label for="aRef3">3) Name, Address, Phone</label><input id="aRef3" type="text"></div>
+        </section>
+
+        <section class="step" data-title="Statement of Certification" hidden>
+          <h2>Statement of Certification</h2>
+          <p class="cert">By signing this application, I certify the facts contained in this application are true and complete to the best of my knowledge. I understand if I become employed, falsified statements on this application shall be grounds for dismissal. I authorize investigation of all statements and information contained herein. Specifically, I authorize Gila River Farms to make all necessary and appropriate investigation allowed by law to verify the information provided.</p>
+          <div class="field agree"><p>It is the goal of Gila River Farms to maintain a drug and alcohol free workplace. Gila River Farms has adopted the ADOT standards. Prior to Gila River Farms extending a job offer to any applicant, each individual will be screened. If the applicant tests positive the job offer will be rescinded.<span class="star" aria-hidden="true">*</span></p><label class="opt"><input type="checkbox" id="agDrug" required> I agree</label></div>
+          <div class="field agree"><p>Employment at Gila River Farms is strictly on an At-Will Basis (all employees are hired for an indefinite period and either the employer or the employee can terminate the relation at any time for any reason)<span class="star" aria-hidden="true">*</span></p><label class="opt"><input type="checkbox" id="agWill" required> I agree</label></div>
+          <div class="field agree"><p>I understand if, hired I will be required to provide legal proof of documentation to work in the U.S.A., including a copy of a Social Security Card for tax purposes<span class="star" aria-hidden="true">*</span></p><label class="opt"><input type="checkbox" id="agDocs" required> I agree</label></div>
+        </section>
+
+        <div class="app-nav">
+          <button class="btn ghost" type="button" id="appBack" hidden>Back</button>
+          <button class="btn solid" type="button" id="appNext">Next</button>
+          <button class="btn solid" type="submit" id="appSubmit" hidden>Submit application</button>
+        </div>
+      </form>
+      <div class="app-done" id="appDone" hidden role="status">
+        <h2>Application received</h2>
+        <p>Thank you for applying to Gila River Farms. Your application was received, and we’ll contact you if your experience matches an open position.</p>
+        <button class="btn ghost" type="button" id="appAgain">Start a new application</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<section class="news" aria-labelledby="newsTitle">
+  <div class="wrap">
+    <div class="sec-head"><div><h2 id="newsTitle">Agricultural Updates</h2><p>Headlines on water, hay, cotton and citrus from around the industry.</p></div><span class="stamp">Updated October 14, 2026</span></div>
+    <div class="news-grid">
+        <a class="news-card" href="https://www.kjzz.org/politics/2026-10-01/new-colorado-river-rules-start-today-but-questions-linger-about-arizona-water-cutbacks" target="_blank" rel="noopener"><span class="news-tag">Water</span><h3>New Colorado River rules start Oct. 1, but questions linger about Arizona water cutbacks</h3><span class="news-meta">KJZZ · Oct 1, 2026</span></a>
+        <a class="news-card" href="https://hpj.com/2026/10/13/hay-prices-and-demand/" target="_blank" rel="noopener"><span class="news-tag">Hay</span><h3>State-By-State Hay Markets</h3><span class="news-meta">High Plains Journal · Oct 13, 2026</span></a>
+        <a class="news-card" href="https://citrusindustry.net/2026/10/09/seasons-first-forecast-shows-stark-contrasts-among-citrus-producing-states/" target="_blank" rel="noopener"><span class="news-tag">Citrus</span><h3>Season’s First Forecast Shows Stark Contrasts Among Citrus-Producing States</h3><span class="news-meta">Citrus Industry Magazine · Oct 9, 2026</span></a>
+        <a class="news-card" href="https://www.ams.usda.gov/mnreports/cnwwcmr.pdf" target="_blank" rel="noopener"><span class="news-tag">Cotton</span><h3>Weekly Cotton Market Review, October 9, 2026</h3><span class="news-meta">USDA Agricultural Marketing Service · Oct 9, 2026</span></a>
+        <a class="news-card" href="https://indexbox.io/blog/usda-crop-progress-report-corn-maturity-91-soybean-harvest-46-as-of-october-11-2026" target="_blank" rel="noopener"><span class="news-tag">Crops</span><h3>USDA Crop Progress Report October 13, 2026: Corn, Soybean, Cotton Harvest Updates</h3><span class="news-meta">IndexBox · Oct 13, 2026</span></a>
+        <a class="news-card" href="https://cronkitenews.azpbs.org/2026/09/10/water-cuts-arizona-farms/" target="_blank" rel="noopener"><span class="news-tag">Water</span><h3>Colorado River cuts haven’t hit Arizona farmers yet, but that might be coming</h3><span class="news-meta">Cronkite News · Sep 10, 2026</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><b>Gila River Farms</b><p>An enterprise of the Gila River Indian Community. Alfalfa hay, cotton, citrus and olives.</p><p style="margin-top:14px"><a class="fb" href="https://www.facebook.com/share/1FNkhpDn8c/?mibextid=wwXIfr" target="_blank" rel="noopener">Follow us on Facebook</a></p></div>
+      <div><b>Visit</b><p>220 N. Old Hwy 93<br>Sacaton, AZ 85147<br>P.O. Box 397<br><span class="num">(520) 315-3965</span><br><span class="num">Fax (520) 315-3775</span></p></div>
+      <div><b>About</b><ul>
+        <li><a href="/our-mission/">Our Mission</a></li>
+        <li><a href="/our-team/">Our Team</a></li>
+        <li><a href="/our-history/">Our History</a></li>
+        <li><a href="/donate/">Request a Donation</a></li>
+      </ul></div>
+      <div><b>Our Products</b><ul>
+        <li><a href="/hay/">Hay</a></li>
+        <li><a href="/horse-hay/">Horse Hay</a></li>
+        <li><a href="/cow-hay/">Cow Hay</a></li>
+        <li><a href="/olive-oil/">Olive Oil</a></li>
+        <li><a href="/what-we-grow/">What We Grow</a></li>
+      </ul></div>
+      <div><b>More</b><ul>
+        <li><a href="/available-jobs/">Available Jobs</a></li>
+        <li><a href="/job-application/">Employment Application</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/account/">My Account</a></li>
+      </ul></div>
+    </div>
+    <p class="copy">© 2026 Gila River Farms<a href="/privacy-policy/">Privacy Policy</a></p>
+  </div>
+</footer>
+<script>window.GRF_LIVE=true</script>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
