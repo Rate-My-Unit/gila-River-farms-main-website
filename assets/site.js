@@ -80,7 +80,7 @@ function collect(form){
 function addHoneypot(f){if(f.querySelector('[name="company"]'))return;const i=document.createElement("input");i.name="company";i.tabIndex=-1;i.autocomplete="off";i.setAttribute("aria-hidden","true");i.style.cssText="position:absolute;left:-9999px;width:1px;height:1px;opacity:0";f.appendChild(i)}
 async function sendForm(name,form){
   const hp=form.querySelector('[name="company"]');
-  const r=await fetch("/api/submit",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({form:name,page:location.pathname,fields:collect(form),company:hp?hp.value:""})});
+  const r=await fetch("/api/submit/",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({form:name,page:location.pathname,fields:collect(form),company:hp?hp.value:""})});
   if(!r.ok)throw new Error("HTTP "+r.status);
 }
 function showMsg(form,msg,isErr){let out=form.querySelector(".sent");if(!out){out=document.createElement("p");out.className="sent";out.setAttribute("role","status");form.appendChild(out)}out.textContent=msg;out.classList.toggle("err",!!isErr);out.hidden=false}
@@ -257,8 +257,8 @@ if(co){
   const origRender=render;
   render=function(){origRender();if(elements)elements.update({amount:Math.max(50,cents())})};
   if(LIVE){
-    api("/api/config").then(r=>{cfg=r.data||cfg;if(cfg.card)q("#payCardOpt").hidden=false});
-    api("/api/account").then(r=>{if(r.ok&&r.data.user){const u=r.data.user;if(!q("#coName").value)q("#coName").value=u.name||"";if(!q("#coEmail").value)q("#coEmail").value=u.email||"";if(!q("#coPhone").value)q("#coPhone").value=u.phone||""}});
+    api("/api/config/").then(r=>{cfg=r.data||cfg;if(cfg.card)q("#payCardOpt").hidden=false});
+    api("/api/account/").then(r=>{if(r.ok&&r.data.user){const u=r.data.user;if(!q("#coName").value)q("#coName").value=u.name||"";if(!q("#coEmail").value)q("#coEmail").value=u.email||"";if(!q("#coPhone").value)q("#coPhone").value=u.phone||""}});
     const pi=new URLSearchParams(location.search).get("payment_intent");
     if(pi)finish({payment:"card",paymentIntentId:pi});
   }
@@ -269,7 +269,7 @@ if(co){
     window.scrollTo(0,0);
   }
   async function finish(body){
-    const r=await api("/api/checkout",{action:"place",...body});
+    const r=await api("/api/checkout/",{action:"place",...body});
     if(r.ok&&r.data.order){try{sessionStorage.removeItem("grf_co")}catch(e){};done(r.data.order);return true}
     say(co,`We couldn't place your order (${e2(r.data.error||"error")}). Please call the office at ${OFFICE_PHONE}.`,true);return false;
   }
@@ -282,7 +282,7 @@ if(co){
     try{
       if(payMode()==="card"&&stripe&&elements){
         const sub=await elements.submit();if(sub.error){say(co,e2(sub.error.message),true);return}
-        const r=await api("/api/checkout",{action:"intent",items,customer});
+        const r=await api("/api/checkout/",{action:"intent",items,customer});
         if(!r.ok){say(co,`Card payment isn't available right now (${e2(r.data.error||"error")}). Choose Pay at pickup or call ${OFFICE_PHONE}.`,true);return}
         try{sessionStorage.setItem("grf_co","1")}catch(e){}
         const {error,paymentIntent}=await stripe.confirmPayment({elements,clientSecret:r.data.clientSecret,redirect:"if_required",confirmParams:{return_url:location.origin+"/checkout/",receipt_email:customer.email}});
@@ -307,16 +307,16 @@ function showUser(u,orders){
 }
 function showSignedOut(){q("#acctOut").hidden=false;q("#acctIn").hidden=true;q("#acctTitle").textContent="My Account";q("#acctLede").textContent="Sign in to see your orders and check out faster."}
 if(lf){
-  if(LIVE)api("/api/account").then(r=>{if(r.ok&&r.data.user)showUser(r.data.user,r.data.orders);else showSignedOut()});
+  if(LIVE)api("/api/account/").then(r=>{if(r.ok&&r.data.user)showUser(r.data.user,r.data.orders);else showSignedOut()});
   lf.addEventListener("submit",async ev=>{ev.preventDefault();if(!valid(lf))return;if(!LIVE){say(lf,notLive,true);return}
-    const r=await api("/api/auth",{action:"login",email:q("#lEmail").value.trim(),password:q("#lPass").value});
-    if(r.ok){const a=await api("/api/account");showUser(a.data.user,a.data.orders);lf.reset()}
+    const r=await api("/api/auth/",{action:"login",email:q("#lEmail").value.trim(),password:q("#lPass").value});
+    if(r.ok){const a=await api("/api/account/");showUser(a.data.user,a.data.orders);lf.reset()}
     else say(lf,r.status===401?"That email and password don't match. Try again.":r.status===503?"Accounts aren't available yet. Please call the office.":"Sign in failed. Please try again.",true)});
   sf.addEventListener("submit",async ev=>{ev.preventDefault();if(!valid(sf))return;if(!LIVE){say(sf,notLive,true);return}
-    const r=await api("/api/auth",{action:"signup",name:q("#rName").value.trim(),phone:q("#rPhone").value.trim(),email:q("#rEmail").value.trim(),password:q("#rPass").value});
-    if(r.ok){const a=await api("/api/account");showUser(a.data.user,a.data.orders);sf.reset()}
+    const r=await api("/api/auth/",{action:"signup",name:q("#rName").value.trim(),phone:q("#rPhone").value.trim(),email:q("#rEmail").value.trim(),password:q("#rPass").value});
+    if(r.ok){const a=await api("/api/account/");showUser(a.data.user,a.data.orders);sf.reset()}
     else say(sf,r.status===409?"An account with that email already exists. Sign in instead.":r.status===503?"Accounts aren't available yet. Please call the office.":"We couldn't create your account. Check your details and try again.",true)});
-  q("#logoutBtn").addEventListener("click",async()=>{await api("/api/auth",{action:"logout"});showSignedOut()});
+  q("#logoutBtn").addEventListener("click",async()=>{await api("/api/auth/",{action:"logout"});showSignedOut()});
 }
 render();
 addEventListener("storage",ev=>{if(ev.key==="grf_cart")render()});
@@ -326,7 +326,7 @@ addEventListener("storage",ev=>{if(ev.key==="grf_cart")render()});
 /* ---------- live agricultural news ---------- */
 const grid=$(".news-grid");
 if(grid){
-  fetch("/api/news").then(r=>r.ok?r.json():null).then(d=>{
+  fetch("/api/news/").then(r=>r.ok?r.json():null).then(d=>{
     if(!d||!Array.isArray(d.items)||!d.items.length)return;
     grid.innerHTML=d.items.slice(0,6).map(it=>`<a class="news-card" href="${esc(it.link)}" target="_blank" rel="noopener"><span class="news-tag">${esc(it.tag)}</span><h3>${esc(it.title)}</h3><span class="news-meta">${esc(it.source)}${it.date?" · "+esc(it.date):""}</span></a>`).join("");
     const st=document.querySelector(".news .stamp");if(st)st.textContent="Updated "+new Date(d.updated||Date.now()).toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"});
